@@ -1,4 +1,4 @@
-import Asset from '../domain-model/asset.domain-model';
+import {Asset} from '../domain-model/asset.domain-model';
 import {AppModule} from '../app/app.module';
 import { Injectable } from '@angular/core';
 

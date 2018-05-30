@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import Asset from '../domain-model/asset.domain-model';
+import {Asset} from '../domain-model/asset.domain-model';
 import {EnvelopBudgetingFacade} from '../facades/envelop-budgeting.facade';
+import {AssetRepository} from '../repositories/asset.repository';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,12 @@ import {EnvelopBudgetingFacade} from '../facades/envelop-budgeting.facade';
 })
 export class AppComponent {
 
-  constructor(private EnvelopBudgetingFacade:EnvelopBudgetingFacade){
+  constructor(private EnvelopBudgetingFacade:EnvelopBudgetingFacade,
+              private AssetRepository:AssetRepository){
 
   }
 
   title = 'envelop-budgeting-system!';
-  assets = <Asset[]>[
-    <Asset>{name:'Kbank',value:23000},
-    <Asset>{name:'Bualuang',value:3000}
-  ];
+  assets = this.AssetRepository.getAll();
   totalBudget = this.EnvelopBudgetingFacade.getAvaliableBudget(this.assets);
 }
