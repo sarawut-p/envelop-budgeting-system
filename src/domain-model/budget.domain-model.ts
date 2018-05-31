@@ -1,4 +1,4 @@
-export default class Budget{
+export class Budget{
     public name:string;
     public value:number;
 }

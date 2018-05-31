@@ -11,8 +11,6 @@
   <div>Allocated Budget - 0</div>
 </div>
 <h2>Budgets</h2>
-<div>
-  <div>Master Degree - 0</div>
-  <div>Condo - 0</div>
-  <div>New Pc - 0</div>
+<div *ngFor="let budget of budgets">
+  <div>{{budget.name}} - {{budget.value}}</div>
 </div>
