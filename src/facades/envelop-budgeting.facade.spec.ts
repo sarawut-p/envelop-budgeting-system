@@ -1,5 +1,5 @@
 import {EnvelopBudgetingFacade} from './envelop-budgeting.facade';
-import Asset from '../domain-model/asset.domain-model';
+import {Asset} from '../domain-model/asset.domain-model';
 
 describe('EnvelopBudgetingFacade', () => {
 
