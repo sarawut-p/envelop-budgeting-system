@@ -1,3 +1,8 @@
+Envelop Budgeting System
+===
+
+Seperate your budget into category
+
 # EnvelopBudgetingSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
