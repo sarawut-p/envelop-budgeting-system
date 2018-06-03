@@ -10,6 +10,20 @@
   <div>Total Budget Availiable - {{totalBudget|number}}</div>
   <div>Allocated Budget - 0</div>
 </div>
+<h2>Edit Assets</h2>
+<div>
+  <div *ngFor="let asset of assets">
+    <div>
+      Name :
+      <input type="text" class="form-control" id="name"
+      required
+      [(ngModel)]="asset.name" name="name">
+    </div>
+    <div>
+      Value :
+    </div>
+  </div>
+</div>
 <h2>Budgets</h2>
 <div *ngFor="let budget of budgets">
   <div>{{budget.name}} - {{budget.value}}</div>
