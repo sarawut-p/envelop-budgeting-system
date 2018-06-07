@@ -18,7 +18,9 @@ export class AppComponent {
 
   title = 'envelop-budgeting-system!';
   assets = this.AssetRepository.getAll();
-  totalBudget = this.EnvelopBudgetingFacade.getAvaliableBudget(this.assets);
+  get totalBudget(){
+    return this.EnvelopBudgetingFacade.getAvaliableBudget(this.assets);
+  }
   budgets = [
      <Budget>{name:'Master Degree', value:0},
      <Budget>{name:'Condo', value:0},
