@@ -1,12 +1,15 @@
-import {Asset} from '../domain-model/asset.domain-model';
-import {AppModule} from '../app/app.module';
 import { Injectable } from '@angular/core';
+import * as fp from "lodash/fp";
+import { isNgTemplate } from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root',
 })
 export class EnvelopBudgetingFacade{
-    getAvaliableBudget(assets:Asset[]){
-        return assets.reduce((sum, asset) => sum + asset.value,0);
+    getAvaliableBudget(assets: Entity.IAsset[],budgets:Entity.IBudget[]){
+
+        const sumByValue = fp.sumBy<{value:number}>(item =>item.value);
+        const totalAssets =  sumByValue(assets) - sumByValue(budgets);        
+        return totalAssets;
     }   
 }

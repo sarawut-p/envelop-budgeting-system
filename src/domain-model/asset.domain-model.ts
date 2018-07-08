@@ -1,4 +1,5 @@
-export class Asset{
-    public name:string;
-    public value:number;
+
+export class Asset implements Entity.IAsset{
+    public name: string;
+    public value: number;
 }

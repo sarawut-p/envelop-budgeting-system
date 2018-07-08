@@ -18,12 +18,12 @@ export class AppComponent {
 
   title = 'envelop-budgeting-system!';
   assets = this.AssetRepository.getAll();
-  get totalBudget(){
-    return this.EnvelopBudgetingFacade.getAvaliableBudget(this.assets);
+  get totalBudget() {
+    return this.EnvelopBudgetingFacade.getAvaliableBudget(this.assets, this.budgets);
   }
   budgets = [
-     <Budget>{name:'Master Degree', value:0},
-     <Budget>{name:'Condo', value:0},
-     <Budget>{name:'New PC', value:0},     
+    <Budget>{ name: 'Master Degree', value: 0 },
+    <Budget>{ name: 'Condo', value: 0 },
+    <Budget>{ name: 'New PC', value: 0 },
   ];
 }

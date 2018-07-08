@@ -28,5 +28,8 @@
 </div>
 <h2>Budgets</h2>
 <div *ngFor="let budget of budgets">
-  <div>{{budget.name}} - {{budget.value}}</div>
+  <div>
+    {{budget.name}} - 
+    <input type="number" class="form-control" id="name" required [(ngModel)]="budget.value" name="value">
+  </div>
 </div>
